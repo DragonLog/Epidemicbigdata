@@ -15,7 +15,7 @@
 11. **这是我安卓的课设作业，整个项目大概有五个难点：（1）首先就是对gradle的不熟悉，让整个项目的构建很多时候都处于焦急等待和无计可施；（2）就是对数据接口的分析，新浪和网易的接口因为是大厂在维护所以比较稳定，但由于没有相关文档说明，你只能在茫茫英文和数字中慢慢去结合他们的前端自己分析出有价值的信息；（3）图表问题，最开始想打算用安卓这一块的地图和统计图的，深入后发现又是一片复杂的知识领域，通过对大厂的前端观察发现根本没有必要用安卓端的图表，使用echarts结合webview是完美解决方案，由此只需要学习webview相关知识然后在前端用js渲染即可，这一块的调试需要反复进行，因为AS无法调试html页面；（4）页面跳转问题，由于老师对这一块补充的很少，网上资料也很少，所以整个项目没有系统性的跳转流程，可以说很多页面是硬跳的；（5）百度定位问题，由于需要集成百度定位SDK，所以你又需要对新的东西进行探索，光常规配置就费时费力，后期结合动态权限获取定位信息还有依赖冲突不调试个几十遍真是搞不定。**
 > **注：百度定位目前用的是我的AK和AS码，如果这一块报错可能是配置过期，需要结合官方文档修正！** 
 ***
-![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show1.jpg?raw=true)
-![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show2.jpg?raw=true)
-![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show3.jpg?raw=true)
-![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show4.jpg?raw=true)
+![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show1.jpg)
+![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show2.jpg)
+![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show3.jpg)
+![示例图片](https://github.com/DragonLog/Epidemicbigdata/blob/main/pictureForExample/show4.jpg)
