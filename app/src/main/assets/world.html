@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>海外疫情折线图</title>
+    <script src="file:///android_asset/js/echarts.min.js"></script>
+    <style>
+            html,body{
+            height:100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #test{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+<!--    <h1 id="fuck"></h1>-->
+<script>
+    /*基于准备好的dom，初始化echarts实例*/
+    var myChart = echarts.init(document.getElementById('test'));
+    /*数据*/
+    //日期
+    var xData=[1, 2, 3, 4, 5, 6, 7];
+    //新增确诊
+    var qzData=[7, 6, 5, 4, 3, 2, 1];
+    //新增治愈
+    var zyData=[1, 2, 3, 4, 5, 6, 7];
+
+
+    /*指定图表的配置项和数据*/
+    var option = {
+        /*标题 title {}
+        *   主标题 text
+        *   副标题 subtext
+        *   主标题样式 textStyle
+        *       color
+        *       fontSize
+        * */
+        title:{
+            text:'近15日海外新增 确诊/治愈',
+            subtext:'单位：例',
+            textStyle: {
+                fontSize:12
+            },
+        },
+        /*提示框 tooltip
+        *   trigger 提示框触发方式
+        *       item 图形触发，主要在散点图，饼图等无类目轴的图表中使用。
+        *       axis 坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表
+        *       none 什么都不触发
+        *   backgroundColor 背景色
+        *   textStyle 文字样式
+        *   borderWidth 边界宽度
+        *   borderColor 边界颜色
+        * */
+        tooltip:{
+            trigger:'axis',
+            backgroundColor:'#F5F5F5',
+            textStyle:{
+                color:'#000000'
+            }
+        },
+        /*x轴
+        *   data 类目轴数据
+        *   boundaryGap 边界留白
+        *   axisLine 轴线
+        *       show 可见性
+        *   axisLabel 标签
+        *       rotate 旋转
+        *       margin 外边距
+        *   axisTick 刻度
+        *       show 可见性
+        * */
+        xAxis: {
+            boundaryGap : false,
+            data: xData,
+            axisLine:{
+                show:true
+            },
+            axisLabel:{
+                rotate:45,
+                margin:7
+            },
+            axisTick:{
+                show:true
+            }
+        },
+        /*y轴
+        *   其属性与x 轴类似
+        * */
+        yAxis: {
+            type: 'value',
+            axisLine:{
+                show:true
+            },
+            axisLabel:{
+                margin:5
+            },
+            axisTick:{
+                show:true
+            }
+        },
+        /*图例 legend
+        *   data[] 图例的数据,每一项代表一个系列的 name
+        *   icon 图表形状
+        *   itemGap 元素间隙
+        *   itemHeight 元素高度
+        *   textStyle 文字样式
+        *       fontSize 大小
+        *       color 颜色
+        *       padding 内间距
+        *   left top right bottom 边界位置
+        * */
+        legend:{
+            data:['新增确诊','新增治愈'],
+            icon:'circle',
+            itemGap:10,
+            itemHeight:5,
+            textStyle: {
+                fontSize:10,
+                color:'#999',
+                padding:[0,0,0,-9]
+            },
+            top:30,
+            left:'right',
+        },
+        /*网格 grid
+        *   left top right bottom 边界位置
+        * */
+        grid:{
+            right:10,
+            left:50,
+            top:70
+        },
+        /*系列列表 series
+        *   name 系列名,用于提示tooltip，图例legend 筛选，数据更新
+        *   type 列表类型
+        *   lineStyle 线的样式
+        *       color 颜色
+        *   showSymbol 标记点的显示
+        *   smooth 线的圆滑
+        *   data 数据
+        * */
+        series: [
+            {
+                name:'新增确诊',
+                type:'line',
+                lineStyle: {
+                    color: 'red',
+                },
+                showSymbol:false,
+                smooth:true,
+                data:qzData
+            },
+            {
+                name:'新增治愈',
+                type:'line',
+                lineStyle: {
+                    color: 'green',
+                },
+                showSymbol:false,
+                smooth:true,
+                data:zyData
+            },
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    function setString(results) {
+        xData.length = 0;
+        qzData.length = 0;
+        zyData.length = 0;
+        var string = results.split(",");
+        for (var i = 14; i >= 0; i --) {
+            xData.push(string[i]);
+        }
+        for (var i = 29; i >= 15; i --) {
+            qzData.push(string[i]);
+        }
+        for (var i = 44; i >= 30; i --) {
+            zyData.push(string[i]);
+        }
+        myChart.setOption(option);
+    }
+</script>
+</body>
+</html>

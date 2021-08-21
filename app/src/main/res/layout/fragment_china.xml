@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/chinaSwiperefreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/baseArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="全国疫情数据(含港澳台)"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/limitTime_china"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="截止XXXX-XX-XX XX:XX:XX"
+                        android:textColor="#9999A5"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/firstline_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="境外输入"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/jwsr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="---"
+                                android:textColor="#FFA352"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="@+id/firstline_1"
+                                app:layout_constraintStart_toStartOf="@+id/firstline_1"
+                                app:layout_constraintTop_toBottomOf="@+id/firstline_1" />
+
+                            <TextView
+                                android:id="@+id/jwsr_jzr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="较昨日"
+                                android:textColor="#9999A5"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@+id/firstline_1"
+                                app:layout_constraintStart_toStartOf="@+id/firstline_1"
+                                app:layout_constraintTop_toBottomOf="@+id/jwsr" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/firstline_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="无症状感染者"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/wzzgrz"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="---"
+                                android:textColor="#791618"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="@+id/firstline_2"
+                                app:layout_constraintStart_toStartOf="@+id/firstline_2"
+                                app:layout_constraintTop_toBottomOf="@+id/firstline_2" />
+
+                            <TextView
+                                android:id="@+id/wzzgrz_jzr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="较昨日"
+                                android:textColor="#9999A5"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@+id/firstline_2"
+                                app:layout_constraintStart_toStartOf="@+id/firstline_2"
+                                app:layout_constraintTop_toBottomOf="@+id/wzzgrz" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/firstline_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="现有确诊"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/xyqz"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="---"
+                                android:textColor="#E44A3D"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="@+id/firstline_3"
+                                app:layout_constraintStart_toStartOf="@+id/firstline_3"
+                                app:layout_constraintTop_toBottomOf="@+id/firstline_3" />
+
+                            <TextView
+                                android:id="@+id/xyqz_jzr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="较昨日"
+                                android:textColor="#9999A5"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@+id/firstline_3"
+                                app:layout_constraintStart_toStartOf="@+id/firstline_3"
+                                app:layout_constraintTop_toBottomOf="@+id/xyqz" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/secondline_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="累计确诊"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/ljqz"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="---"
+                                android:textColor="#A31D13"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="@+id/secondline_1"
+                                app:layout_constraintStart_toStartOf="@+id/secondline_1"
+                                app:layout_constraintTop_toBottomOf="@+id/secondline_1" />
+
+                            <TextView
+                                android:id="@+id/ljqz_jzr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="较昨日"
+                                android:textColor="#9999A5"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@+id/secondline_1"
+                                app:layout_constraintStart_toStartOf="@+id/secondline_1"
+                                app:layout_constraintTop_toBottomOf="@+id/ljqz" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/secondline_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="累计死亡"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/ljsw"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="---"
+                                android:textColor="#333333"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="@+id/secondline_2"
+                                app:layout_constraintStart_toStartOf="@+id/secondline_2"
+                                app:layout_constraintTop_toBottomOf="@+id/secondline_2" />
+
+                            <TextView
+                                android:id="@+id/ljsw_jzr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="较昨日"
+                                android:textColor="#9999A5"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@+id/secondline_2"
+                                app:layout_constraintStart_toStartOf="@+id/secondline_2"
+                                app:layout_constraintTop_toBottomOf="@+id/ljsw" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/secondline_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="累计治愈"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/ljzy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="---"
+                                android:textColor="#34AA70"
+                                android:textSize="25sp"
+                                app:layout_constraintEnd_toEndOf="@+id/secondline_3"
+                                app:layout_constraintStart_toStartOf="@+id/secondline_3"
+                                app:layout_constraintTop_toBottomOf="@+id/secondline_3" />
+
+                            <TextView
+                                android:id="@+id/ljzy_jzr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="较昨日"
+                                android:textColor="#9999A5"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@+id/secondline_3"
+                                app:layout_constraintStart_toStartOf="@+id/secondline_3"
+                                app:layout_constraintTop_toBottomOf="@+id/ljzy" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="16dp"
+                android:layout_margin="5dp"
+                android:id="@+id/mapArea"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/baseArea" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <WebView
+                        android:layout_weight="1"
+                        android:id="@+id/chinaMap"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

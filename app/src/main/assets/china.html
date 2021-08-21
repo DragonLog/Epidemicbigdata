@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>中国疫情地图</title>
+	<script src="file:///android_asset/js/echarts.min.js"></script>
+	<script src="file:///android_asset/js/china.js"></script>
+	<style>
+        html,body{
+            height:100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+	<div id="map"></div>
+	<script type="text/javascript">
+			var map = echarts.init(document.getElementById('map'));//初始化
+			var COLORS = ["#ffffff", "#faebd2", "#e9a188", "#d56355", "#bb3937", "#772526", "#480f10"];//图例里的颜色
+			var dataList=[//数据
+							{name:"南海诸岛",value:0},
+							{name: '北京', value: 0},
+							{name: '天津', value: 0},
+							{name: '上海', value: 0},
+							{name: '重庆', value: 0},
+							{name: '河北', value: 0},
+							{name: '河南', value: 0},
+							{name: '云南', value: 0},
+							{name: '辽宁', value: 0},
+							{name: '黑龙江', value: 0},
+							{name: '湖南', value: 0},
+							{name: '安徽', value: 0},
+							{name: '山东', value: 0},
+							{name: '新疆', value: 0},
+							{name: '江苏', value: 0},
+							{name: '浙江', value: 0},
+							{name: '江西', value: 0},
+							{name: '湖北', value: 0},
+							{name: '广西', value: 0},
+							{name: '甘肃', value: 0},
+							{name: '山西', value: 0},
+							{name: '内蒙古', value: 0},
+							{name: '陕西', value: 0},
+							{name: '吉林', value: 0},
+							{name: '福建', value: 0},
+							{name: '贵州', value: 0},
+							{name: '广东', value: 0},
+							{name: '青海', value: 0},
+							{name: '西藏', value: 0},
+							{name: '四川', value: 0},
+							{name: '宁夏', value: 0},
+							{name: '海南', value: 0},
+							{name: '台湾', value: 0},
+							{name: '香港', value: 0},
+							{name: '澳门', value: 0}
+						]
+
+			var option={//配置项（名称）
+				title: {
+					text: '全国疫情图',
+					left: 'center'
+				  },
+				tooltip: {//提示框组件
+								formatter:function(params,ticket, callback){//提示框浮层内容格式器，支持字符串模板和回调函数两种形式。
+									return params.seriesName+'<br />'+params.name+'：'+params.value
+								}//数据格式化
+							},
+						backgroundColor:'#ffffff',//背景色
+						visualMap: {//visualMap 是视觉映射组件，用于进行『视觉编码』，也就是将数据映射到视觉元素（视觉通道）。
+							type: 'piecewise',//分段型视觉映射组件
+							orient: 'vertical',//方向
+							itemWidth: 10,
+							itemHeight: 5,
+							left: 'left',//位置
+							top: 'bottom',//位置
+							textStyle: { //图例文字的样式
+								color: '#000000',
+								fontSize: 9
+							},
+							pieces: [{//自定义『分段式视觉映射组件』的每一段的范围，以及每一段的文字，以及每一段的特别的样式。
+								value: 0, color: COLORS[0], label:'0人'
+							}, {
+								min: 1, max: 9, color: COLORS[1], label:'1-9人'
+							}, {
+								min: 10, max: 99, color: COLORS[2], label:'10-99人'
+							}, {
+								min: 100, max: 499, color: COLORS[3], label:'100-499人'
+							}, {
+								min: 500, max: 999, color: COLORS[4], label:'500-999人'
+							}, {
+								min: 1000, max: 9999, color: COLORS[5], label:'1000-9999人'
+							}, {
+								min: 10000, color: COLORS[6], label:'≥10000人'
+							}],
+							inRange: {
+								color:COLORS //取值范围的颜色
+							},
+
+							show:true//图注
+						},
+						geo: {//地理坐标系组件用于地图的绘制
+							map: 'china',
+							roam: false,//不开启缩放和平移
+							zoom: 1.23,//视角缩放比例
+							label: {
+								normal: {
+									show: true,
+									fontSize:'9',
+									color: 'rgba(0,0,0,0.7)'
+								}
+							},
+							itemStyle: {
+								normal:{
+									borderColor: 'rgba(0, 0, 0, 0.2)'
+								},
+								emphasis:{
+									areaColor: '#00A2E8',//鼠标选择区域颜色
+									shadowOffsetX: 0,
+									shadowOffsetY: 0,
+									shadowBlur: 20,
+									borderWidth: 0,
+									shadowColor: 'rgba(0, 0, 0, 0.5)'
+								}
+							}
+						},
+						series : [//系列列表。（图表）
+							{
+								name: '现有确诊',
+								type: 'map',//图表类型
+								geoIndex: 0,
+								data:dataList//图表的数据
+							}
+						]
+			}
+
+			map.setOption(option);//用配置项配置（动词）echarts
+
+			function setMapData(result) {
+				dataList.length = 0;
+				result = JSON.stringify(result);
+				result = JSON.parse(result);
+				for(var i = 0; i < result.length; i ++) {
+				  var json = {
+					  name: result[i].name,
+					  value: result[i].value
+					}
+				  dataList.push(json);
+				}
+				map.setOption(option);
+			}
+		</script>
+</body>
+</html>
