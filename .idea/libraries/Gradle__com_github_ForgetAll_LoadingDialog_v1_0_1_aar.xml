@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.ForgetAll:LoadingDialog:v1.0.1@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../Android/gradle/caches/transforms-2/files-2.1/5715406566b512a47539bb1a547d3e29/LoadingDialog-v1.0.1/res" />
+      <root url="file://$PROJECT_DIR$/../../../Android/gradle/caches/transforms-2/files-2.1/5715406566b512a47539bb1a547d3e29/LoadingDialog-v1.0.1/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../../Android/gradle/caches/transforms-2/files-2.1/5715406566b512a47539bb1a547d3e29/LoadingDialog-v1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57b12a04b77891806d30517bad4cdddd/jetified-LoadingDialog-v1.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57b12a04b77891806d30517bad4cdddd/jetified-LoadingDialog-v1.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/57b12a04b77891806d30517bad4cdddd/jetified-LoadingDialog-v1.0.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
